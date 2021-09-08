@@ -65,4 +65,10 @@ return require('packer').startup(function()
             require('configs.presence')
         end,
     }
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      config = function()
+         require "configs.treesitter"
+      end,
+   }
 end)
