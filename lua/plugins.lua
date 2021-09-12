@@ -77,4 +77,10 @@ return require('packer').startup(function()
             require 'configs.toggleterm'
         end,
    }
+   use {
+        'terrortylor/nvim-comment',
+        config = function()
+            require 'configs.nvim-comment'
+        end,
+   }
 end)

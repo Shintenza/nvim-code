@@ -113,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kamil/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
+  ["nvim-comment"] = {
+    config = { "\27LJ\1\0024\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\25configs.nvim-comment\frequire\0" },
+    loaded = true,
+    path = "/home/kamil/.local/share/nvim/site/pack/packer/start/nvim-comment"
+  },
   ["nvim-lspconfig"] = {
     config = { "\27LJ\1\0026\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\27configs.nvim-lspconfig\frequire\0" },
     loaded = true,
@@ -181,6 +186,10 @@ time([[Config for toggleterm.nvim]], false)
 time([[Config for lspkind-nvim]], true)
 try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20configs.lspkind\frequire\0", "config", "lspkind-nvim")
 time([[Config for lspkind-nvim]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+try_loadstring("\27LJ\1\0024\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\25configs.nvim-comment\frequire\0", "config", "nvim-comment")
+time([[Config for nvim-comment]], false)
 -- Config for: lspsaga.nvim
 time([[Config for lspsaga.nvim]], true)
 try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20configs.lspsaga\frequire\0", "config", "lspsaga.nvim")
