@@ -6,12 +6,6 @@ return require('packer').startup(function()
             require('configs.lspkind')
         end
     }
-    use {
-        "ray-x/lsp_signature.nvim",
-        config = function()
-            require('configs.lsp-signature')
-        end,
-    }
     use 'joshdick/onedark.vim'
     use {
         'neovim/nvim-lspconfig',
@@ -75,6 +69,12 @@ return require('packer').startup(function()
        'windwp/nvim-autopairs',
         config = function()
             require "configs.nvim_autopairs"
+        end,
+   }
+   use {
+       'akinsho/toggleterm.nvim',
+        config = function()
+            require 'configs.toggleterm'
         end,
    }
 end)

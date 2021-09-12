@@ -93,11 +93,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kamil/.local/share/nvim/site/pack/packer/start/feline.nvim"
   },
-  ["lsp_signature.nvim"] = {
-    config = { "\27LJ\1\0025\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\26configs.lsp-signature\frequire\0" },
-    loaded = true,
-    path = "/home/kamil/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
-  },
   ["lspkind-nvim"] = {
     config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20configs.lspkind\frequire\0" },
     loaded = true,
@@ -154,6 +149,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kamil/.local/share/nvim/site/pack/packer/start/presence.nvim"
   },
+  ["toggleterm.nvim"] = {
+    config = { "\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23configs.toggleterm\frequire\0" },
+    loaded = true,
+    path = "/home/kamil/.local/share/nvim/site/pack/packer/start/toggleterm.nvim"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/kamil/.local/share/nvim/site/pack/packer/start/vim-vsnip"
@@ -161,10 +161,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lsp_signature.nvim
-time([[Config for lsp_signature.nvim]], true)
-try_loadstring("\27LJ\1\0025\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\26configs.lsp-signature\frequire\0", "config", "lsp_signature.nvim")
-time([[Config for lsp_signature.nvim]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
 try_loadstring("\27LJ\1\0026\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\27configs.nvim-lspconfig\frequire\0", "config", "nvim-lspconfig")
@@ -177,6 +173,10 @@ time([[Config for nvim-cmp]], false)
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22configs.nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23configs.toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
 -- Config for: lspkind-nvim
 time([[Config for lspkind-nvim]], true)
 try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20configs.lspkind\frequire\0", "config", "lspkind-nvim")

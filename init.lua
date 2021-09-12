@@ -17,6 +17,7 @@ set.expandtab = true
 set.termguicolors = true
 set.number = true
 set.mouse = 'a'
+set.hidden = true
 
 vim.cmd('colorscheme onedark')
 vim.cmd('hi Normal guibg=#1e222a')
