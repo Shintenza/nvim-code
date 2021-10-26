@@ -1,10 +1,9 @@
-vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {noremap = true})
 require'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = true,
+  auto_close          = false,
   open_on_tab         = false,
   update_to_buf_dir   = {
     enable = true,
@@ -12,7 +11,15 @@ require'nvim-tree'.setup {
   },
   hijack_cursor       = false,
   update_cwd          = false,
-  lsp_diagnostics     = true,
+  diagnostics = {
+    enable = true,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    }
+  },
   update_focused_file = {
     enable      = false,
     update_cwd  = false,
@@ -26,6 +33,7 @@ require'nvim-tree'.setup {
   view = {
     width = 30,
     height = 30,
+    hide_root_folder = false,
     side = 'left',
     auto_resize = false,
     mappings = {
@@ -33,4 +41,3 @@ require'nvim-tree'.setup {
       list = {}
     }
   }
-}
