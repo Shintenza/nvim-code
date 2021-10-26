@@ -1,3 +1,4 @@
+vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {noremap = true})
 require'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
@@ -12,7 +13,7 @@ require'nvim-tree'.setup {
   hijack_cursor       = false,
   update_cwd          = false,
   diagnostics = {
-    enable = true,
+    enable = false,
     icons = {
       hint = "",
       info = "",
@@ -41,3 +42,5 @@ require'nvim-tree'.setup {
       list = {}
     }
   }
+}
+
