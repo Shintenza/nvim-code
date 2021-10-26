@@ -15,8 +15,8 @@ cmp.setup({
         end,
     },
     sources = {
-        { name = 'buffer' },
         { name = 'nvim_lsp' },
+        { name = 'buffer' },
     },
     mapping = {
         ['<Tab>'] = function(fallback)
@@ -36,7 +36,6 @@ cmp.setup({
             vim_item.kind = lspkind.presets.default[vim_item.kind]
             vim_item.menu = ({
                 nvim_lsp = "[LSP]",
-                nvim_lua = "[Lua]",
                 buffer = "[BUF]",
             })[entry.source.name]
             return vim_item

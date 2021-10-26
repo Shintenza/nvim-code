@@ -1,4 +1,40 @@
 vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {noremap = true})
+local g = vim.g
+
+g.nvim_tree_indent_markers = 1
+g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
+
+g.nvim_tree_show_icons = {
+   folders = 1,
+   -- folder_arrows= 1
+   files = 1,
+   git = git_status,
+}
+
+g.nvim_tree_icons = {
+   default = "",
+   symlink = "",
+   git = {
+      deleted = "",
+      ignored = "◌",
+      renamed = "➜",
+      staged = "✓",
+      unmerged = "",
+      unstaged = "✗",
+      untracked = "★",
+   },
+   folder = {
+      -- disable indent_markers option to get arrows working or if you want both arrows and indent then just add the arrow icons in front            ofthe default and opened folders below!
+      -- arrow_open = "",
+      -- arrow_closed = "",
+      default = "",
+      empty = "", -- 
+      empty_open = "",
+      open = "",
+      symlink = "",
+      symlink_open = "",
+   },
+}
 require'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
@@ -13,7 +49,7 @@ require'nvim-tree'.setup {
   hijack_cursor       = false,
   update_cwd          = false,
   diagnostics = {
-    enable = false,
+    enable = true,
     icons = {
       hint = "",
       info = "",
@@ -34,7 +70,7 @@ require'nvim-tree'.setup {
   view = {
     width = 30,
     height = 30,
-    hide_root_folder = false,
+    hide_root_folder = true,
     side = 'left',
     auto_resize = false,
     mappings = {
