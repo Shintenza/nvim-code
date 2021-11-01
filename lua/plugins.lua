@@ -6,7 +6,7 @@ return require('packer').startup(function()
             require('configs.lspkind')
         end
     }
-    use 'joshdick/onedark.vim'
+    use 'navarasu/onedark.nvim'
     use {
         'neovim/nvim-lspconfig',
         config = function()

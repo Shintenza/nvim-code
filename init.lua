@@ -20,4 +20,5 @@ set.mouse = 'a'
 set.hidden = true
 
 vim.cmd('colorscheme onedark')
+vim.g.onedark_style = 'darker'
 vim.cmd('hi Normal guibg=#1e222a')

@@ -141,9 +141,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kamil/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
-  ["onedark.vim"] = {
+  ["onedark.nvim"] = {
     loaded = true,
-    path = "/home/kamil/.local/share/nvim/site/pack/packer/start/onedark.vim"
+    path = "/home/kamil/.local/share/nvim/site/pack/packer/start/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
