@@ -30,6 +30,7 @@ cmp.setup({
     formatting = {
         format = function(entry, vim_item)
             vim_item.kind = lspkind.presets.default[vim_item.kind]
+            vim_item.abbr = string.sub(vim_item.abbr, 1, 70)
             vim_item.menu = ({
                 nvim_lsp = "[LSP]",
                 buffer = "[BUF]",

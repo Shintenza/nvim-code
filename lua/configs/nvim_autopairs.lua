@@ -1,9 +1,4 @@
-local autopairs = require("nvim-autopairs")
-local autopairs_completion = require("nvim-autopairs.completion.cmp")
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp = require('cmp')
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
 
-
-autopairs.setup()
-autopairs_completion.setup {
-   map_complete = true, -- insert () func completion
-   map_cr = true,
-}
