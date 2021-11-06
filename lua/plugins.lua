@@ -21,10 +21,11 @@ return require('packer').startup(function()
         end,
     }
     use {
-        'famiu/feline.nvim',
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }, 
         config = function()
-            require('configs.feline')
-        end,
+            require('configs.lualine')
+        end
     }
     use {
         "hrsh7th/nvim-cmp",
