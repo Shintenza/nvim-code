@@ -22,3 +22,8 @@ set.hidden = true
 vim.cmd('colorscheme onedark')
 vim.g.onedark_style = 'darker'
 vim.cmd('hi Normal guibg=#1e222a')
+
+vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true})
+vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true})
+vim.api.nvim_set_keymap('n', '<A-w>', '<C-w>w', {noremap = true})
+vim.api.nvim_set_keymap('n', '<A-x>', ':bd<CR>', {noremap = true})
