@@ -6,7 +6,6 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
 ]])
-
 local set = vim.opt
 
 -- Set the behavior of tab
@@ -18,6 +17,10 @@ set.termguicolors = true
 set.number = true
 set.mouse = 'a'
 set.hidden = true
+set.relativenumber = true
+set.nu = true
+set.incsearch = true
+set.scrolloff = 8
 
 vim.cmd('colorscheme onedark')
 vim.g.onedark_style = 'darker'

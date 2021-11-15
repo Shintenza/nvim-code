@@ -21,10 +21,10 @@ return require('packer').startup(function()
         end,
     }
     use {
-        'nvim-lualine/lualine.nvim',
+        'famiu/feline.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }, 
         config = function()
-            require('configs.lualine')
+            require('configs.feline')
         end
     }
     use {
