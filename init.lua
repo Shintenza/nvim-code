@@ -27,6 +27,7 @@ vim.g.onedark_style = 'deep'
 vim.cmd('colorscheme onedark')
 vim.cmd('set nohlsearch')
 vim.cmd('hi NvimTreeStatusLine guibg=#131b25 guifg=#131b25')
+vim.cmd('hi NvimTreeStatusLineNC guibg=#131b25 guifg=#131b25')
 
 vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true})
 vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true})

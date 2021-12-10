@@ -48,10 +48,6 @@ local config = {
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
   },
-  extensions = {
-        'nvim-tree',
-        'toggleterm',
-  },
   sections = {
     -- these are to remove the defaults
     lualine_a = {},
