@@ -35,10 +35,6 @@ local conditions = {
 
 -- Config
 local config = {
-  -- extensions = {
-  --       'nvim-tree',
-  --       'toggleterm',
-  -- },
   options = {
     -- Disable sections and component separators
     component_separators = '',
@@ -51,6 +47,10 @@ local config = {
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
+  },
+  extensions = {
+        'nvim-tree',
+        'toggleterm',
   },
   sections = {
     -- these are to remove the defaults
