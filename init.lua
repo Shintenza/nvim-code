@@ -23,7 +23,7 @@ set.incsearch = true
 set.scrolloff = 8
 
 
-vim.g.onedark_style = 'darker'
+vim.g.onedark_style = 'deep'
 vim.cmd('colorscheme onedark')
 vim.cmd('set nohlsearch')
 

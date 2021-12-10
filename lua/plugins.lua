@@ -20,7 +20,7 @@ return require('packer').startup(function()
              require('configs.nvim-tree')
          end,
      }
-     use {
+    use {
          'nvim-lualine/lualine.nvim',
          requires = {'kyazdani42/nvim-web-devicons', opt = true},
          config = function()
@@ -48,12 +48,12 @@ return require('packer').startup(function()
          after = 'nvim-tree.lua'
      }
      use 'williamboman/nvim-lsp-installer'
-     use {
-         'glepnir/lspsaga.nvim',
-         config = function()
-             require('configs.lspsaga')
-         end,
-     }
+     -- use {
+     --     'tami5/lspsaga.nvim',
+     --     config = function()
+     --         require('configs.lspsaga')
+     --     end,
+     -- }
      use {
          'andweeb/presence.nvim',
          config = function()

@@ -6,7 +6,7 @@ local lualine = require 'lualine'
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#282e3a',
+  bg       = '#0e161e',
   fg       = '#bbc2cf',
   yellow   = '#ECBE7B',
   cyan     = '#008080',
@@ -35,10 +35,15 @@ local conditions = {
 
 -- Config
 local config = {
+  -- extensions = {
+  --       'nvim-tree',
+  --       'toggleterm',
+  -- },
   options = {
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
+    disabled_filetypes = { "NvimTree", "toggleterm" },
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
@@ -47,7 +52,6 @@ local config = {
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
   },
-  extensions = {'nvim-tree'},
   sections = {
     -- these are to remove the defaults
     lualine_a = {},
@@ -72,11 +76,13 @@ local config = {
 -- Inserts a component in lualine_c at left section
 local function ins_left(component)
   table.insert(config.sections.lualine_c, component)
+  table.insert(config.inactive_sections.lualine_c, component)
 end
 
 -- Inserts a component in lualine_x ot right section
 local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
+  table.insert(config.inactive_sections.lualine_x, component)
 end
 
 ins_left {
@@ -138,7 +144,7 @@ ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
 ins_left {
   'diagnostics',
-  sources = { 'nvim_lsp' },
+  sources = { 'nvim_diagnostic' },
   symbols = { error = ' ', warn = ' ', info = ' ' },
   diagnostics_color = {
     color_error = { fg = colors.red },
