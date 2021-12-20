@@ -48,12 +48,6 @@ return require('packer').startup(function()
          after = 'nvim-tree.lua'
      }
      use 'williamboman/nvim-lsp-installer'
-     -- use {
-     --     'tami5/lspsaga.nvim',
-     --     config = function()
-     --         require('configs.lspsaga')
-     --     end,
-     -- }
      use {
          'andweeb/presence.nvim',
          config = function()
