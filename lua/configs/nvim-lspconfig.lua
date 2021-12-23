@@ -37,6 +37,7 @@ local on_attach = function(client, bufnr)
     end
 end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 lsp_installer.on_server_ready(function(server)
     local default_opts = {
@@ -47,6 +48,7 @@ lsp_installer.on_server_ready(function(server)
     local server_options = default_opts
     server:setup(server_options)
 end)
+vim.o.completeopt = 'menuone,noselect'
 
 function lspSymbol(name, icon, color)
    vim.fn.sign_define("DiagnosticSign" .. name, { text = icon, texthl = "" .. name })

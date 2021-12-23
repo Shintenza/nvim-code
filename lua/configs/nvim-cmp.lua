@@ -1,6 +1,7 @@
 vim.opt.completeopt = "menuone,noselect"
 local cmp = require'cmp'
 local lspkind = require('lspkind')
+local luasnip = require 'luasnip'
 
 local check_back_space = function()
   local col = vim.fn.col('.') - 1
@@ -11,11 +12,12 @@ end
 cmp.setup({
     snippet = {
         expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body)
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     sources = {
         { name = 'nvim_lsp' },
+        { name = 'luasnip' },
         { name = 'buffer' },
     },
     mapping = {
