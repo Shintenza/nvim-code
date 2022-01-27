@@ -124,6 +124,8 @@ return packer.startup(function(use)
              require 'configs.nvim-comment'
          end,
     }
+
+    -- Git
     use {
         'lewis6991/gitsigns.nvim',
         requires = {
