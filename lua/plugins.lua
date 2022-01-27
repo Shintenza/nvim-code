@@ -124,4 +124,13 @@ return packer.startup(function(use)
              require 'configs.nvim-comment'
          end,
     }
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        },
+        config = function()
+            require 'configs.git-signs'
+        end,
+    }
 end)

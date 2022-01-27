@@ -1,3 +1,3 @@
 require("toggleterm").setup {
-    open_mapping = [[<a-t>]],
+    open_mapping = [[<c-t>]],
 }
