@@ -1,9 +1,14 @@
-require("presence"):setup({
+local status_ok, presence = pcall(require, "presence")
+if not status_ok then
+  return
+end
+
+presence:setup({
     -- General options
     auto_update         = true,                       -- Update activity based on autocmd events (if `false`, map or manually execute `:lua package.loaded.presence:update()`)
     neovim_image_text   = "The One True Text Editor", -- Text displayed when hovered over the Neovim image
-    main_image          = "file",                   -- Main image display (either "neovim" or "file")
-    enable_line_number  = true,                      -- Displays the current line number instead of the current project
+    main_image          = "file",                     -- Main image display (either "neovim" or "file")
+    enable_line_number  = true,                       -- Displays the current line number instead of the current project
     buttons             = true,                       -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
 
     -- Rich Presence text options

@@ -1,19 +1,11 @@
-require('lspkind').init({
-    -- enables text annotations
-    --
-    -- default: true
+local status_ok, lspkind = pcall(require, "lspkind")
+if not status_ok then
+  return
+end
+
+lspkind.init({
     with_text = true,
-
-    -- default symbol map
-    -- can be either 'default' (requires nerd-fonts font) or
-    -- 'codicons' for codicon preset (requires vscode-codicons font)
-    --
-    -- default: 'default'
     preset = 'codicons',
-
-    -- override preset symbols
-    --
-    -- default: {}
     symbol_map = {
       Text = "",
       Method = "",

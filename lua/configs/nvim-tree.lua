@@ -1,3 +1,8 @@
+local status_ok, nvim_tree = pcall(require, "nvim-tree")
+if not status_ok then
+  return
+end
+
 local g = vim.g
 
 -- g.nvim_tree_indent_markers = 1
@@ -34,7 +39,7 @@ g.nvim_tree_icons = {
       symlink_open = "",
    },
 }
-require'nvim-tree'.setup {
+nvim_tree.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
   open_on_setup       = false,
@@ -55,6 +60,9 @@ require'nvim-tree'.setup {
       warning = "",
       error = "",
     }
+  },
+  git = {
+    ignore = false,
   },
   update_focused_file = {
     enable      = false,
