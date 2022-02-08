@@ -5,16 +5,6 @@ end
 
 local g = vim.g
 
--- g.nvim_tree_indent_markers = 1
-g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
-g.nvim_tree_quit_on_open = 1
-
-g.nvim_tree_show_icons = {
-   folders = 1,
-   files = 1,
-   git = git_status,
-}
-
 g.nvim_tree_icons = {
    default = "",
    symlink = "",
@@ -28,17 +18,15 @@ g.nvim_tree_icons = {
       untracked = "★",
    },
    folder = {
-      -- disable indent_markers option to get arrows working or if you want both arrows and indent then just add the arrow icons in front            ofthe default and opened folders below!
-      -- arrow_open = "",
-      -- arrow_closed = "",
       default = "",
-      empty = "", -- 
+      empty = "",
       empty_open = "",
       open = "",
       symlink = "",
       symlink_open = "",
    },
 }
+
 nvim_tree.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
@@ -46,23 +34,20 @@ nvim_tree.setup {
   ignore_ft_on_setup  = {},
   auto_close          = false,
   open_on_tab         = false,
+  hijack_cursor       = false,
+  update_cwd          = false,
   update_to_buf_dir   = {
     enable = true,
     auto_open = true,
   },
-  hijack_cursor       = false,
-  update_cwd          = false,
   diagnostics = {
-    enable = true,
+    enable = false,
     icons = {
       hint = "",
       info = "",
       warning = "",
       error = "",
     }
-  },
-  git = {
-    ignore = false,
   },
   update_focused_file = {
     enable      = false,
@@ -73,17 +58,39 @@ nvim_tree.setup {
     cmd  = nil,
     args = {}
   },
-
+  filters = {
+    dotfiles = false,
+    custom = {}
+  },
+  git = {
+    enable = true,
+    ignore = false,
+    timeout = 500,
+  },
   view = {
     width = 30,
     height = 30,
-    hide_root_folder = true,
+    hide_root_folder = false,
     side = 'left',
     auto_resize = false,
     mappings = {
       custom_only = false,
       list = {}
+    },
+    number = false,
+    relativenumber = false,
+    signcolumn = "yes"
+  },
+  trash = {
+    cmd = "trash",
+    require_confirm = true
+  },
+  actions = {
+    change_dir = {
+      global = false,
+    },
+    open_file = {
+      quit_on_open = true,
     }
   }
 }
-

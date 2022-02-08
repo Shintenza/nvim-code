@@ -3,20 +3,15 @@ require('options')
 require('keymaps')
 require('colorscheme')
 
--- vim.cmd([[
---     function! CustomFoldText()
---       let indentation = indent(v:foldstart - 1)
---       let foldSize = 1 + v:foldend - v:foldstart
---       let foldSizeStr = " " . foldSize . " lines "
---       let foldLevelStr = repeat("+--", v:foldlevel)
---       let expansionString = repeat(" ", indentation)
---       return expansionString . foldLevelStr . foldSizeStr
---     endfunction
--- ]])
--- vim.cmd([[
---     augroup remember_folds
---     autocmd!
---     autocmd BufWinLeave * mkview
---     autocmd BufWinEnter * silent! loadview
---     augroup END
--- ]])
+-- Plugins config files
+require('configs.cmp')
+require('configs.lsp')
+require('configs.bufferline')
+require('configs.git-signs')
+require('configs.lualine')
+require('configs.comment')
+require('configs.nvimtree')
+require('configs.autopairs')
+require('configs.toggleterm')
+require('configs.treesitter')
+

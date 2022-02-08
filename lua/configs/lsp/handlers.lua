@@ -1,19 +1,30 @@
-local status_ok, nvim_lsp = pcall(require, "lspconfig")
-if not status_ok then
-  return
+local M = {}
+
+M.setup = function()
+  local signs = {
+    { name = "DiagnosticSignError", text = "" },
+    { name = "DiagnosticSignWarn", text = "" },
+    { name = "DiagnosticSignHint", text = "" },
+    { name = "DiagnosticSignInfo", text = "" },
+  }
+
+  for _, sign in ipairs(signs) do
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+  end
+
+  local config = {
+    virtual_text = true,
+    signs = {
+      active = signs,
+    },
+    underline = true,
+    severity_sort = true,
+  }
+
+  vim.diagnostic.config(config)
 end
 
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not status_ok then
-  return
-end
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-  return
-end
-
-local on_attach = function(client, bufnr)
+M.on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -42,34 +53,14 @@ local on_attach = function(client, bufnr)
       buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
     end
 end
+
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
-lsp_installer.on_server_ready(function(server)
-    local default_opts = {
-        on_attach = on_attach,
-        capabilities = capabilities,
-    }
-    local opts = {}
-    local server_options = default_opts
-    server:setup(server_options)
-end)
-vim.o.completeopt = 'menuone,noselect'
-
-function lspSymbol(name, icon, color)
-   vim.fn.sign_define("DiagnosticSign" .. name, { text = icon, texthl = "" .. name })
+local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_ok then
+  return
 end
 
-lspSymbol("Error", "", "red")
-lspSymbol("Warn", "", "yellow")
-lspSymbol("Information", "", "blue")
-lspSymbol("Hint", "", "green")
+M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-   virtual_text = {
-      prefix = ' ',
-      spacing = 0,
-   },
-   signs = true,
-   underline = true,
-})
+return M
