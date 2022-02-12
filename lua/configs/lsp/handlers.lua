@@ -23,8 +23,7 @@ M.setup = function()
 
   vim.diagnostic.config(config)
 end
-
-M.on_attach = function(client, bufnr)
+local function lsp_keymaps(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -47,13 +46,16 @@ M.on_attach = function(client, bufnr)
     buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-    if client.resolved_capabilities.document_formatting then
-      buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-    elseif client.resolved_capabilities.document_range_formatting then
-      buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-    end
+
+    vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
+M.on_attach = function(client, bufnr)
+  if client.name == "tsserver" then
+    client.resolved_capabilities.document_formatting = false
+  end
+  lsp_keymaps(client, bufnr)
+end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")

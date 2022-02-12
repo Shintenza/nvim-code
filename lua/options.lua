@@ -31,7 +31,7 @@ set.signcolumn = "yes"                      -- always show the sign column, othe
 set.wrap = false                            -- display lines as one long line
 set.scrolloff = 8                           -- is one of my fav
 set.sidescrolloff = 8
-set.guifont = 'JetBrainsMono Nerd Font:h10'
+set.guifont = 'JetBrainsMono Nerd Font:h10.0'
 set.incsearch = true
 set.hidden = true
 
@@ -39,7 +39,7 @@ set.shortmess:append "c"
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.cmd [[set formatoptions-=cro]] 
 vim.cmd('setlocal foldmethod=indent')
 
 -- Folding settings 

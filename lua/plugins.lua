@@ -42,10 +42,18 @@ return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'onsails/lspkind-nvim'
     use "lunarvim/darkplus.nvim"
-    use 'neovim/nvim-lspconfig'
 
-    use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons'}
-    use { 'nvim-lualine/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
+    -- Lsp
+    use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
+    use 'jose-elias-alvarez/null-ls.nvim'
+
+    -- Interface
+    use 'kyazdani42/nvim-web-devicons'
+    use 'kyazdani42/nvim-tree.lua'
+    use 'nvim-lualine/lualine.nvim'
+    use 'akinsho/bufferline.nvim'
+    use 'akinsho/toggleterm.nvim'
 
     -- Cmp
     use 'saadparwaiz1/cmp_luasnip'     -- Snippets source for nvim-cmp
@@ -62,11 +70,8 @@ return packer.startup(function(use)
     use 'L3MON4D3/LuaSnip'             -- Snippets plugin
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-    use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-    use 'williamboman/nvim-lsp-installer'
     use "nvim-treesitter/nvim-treesitter"
     use 'windwp/nvim-autopairs'
-    use 'akinsho/toggleterm.nvim'
     use 'terrortylor/nvim-comment'
 
     -- Git
