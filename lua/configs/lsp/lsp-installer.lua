@@ -8,6 +8,9 @@ lsp_installer.on_server_ready(function(server)
 		on_attach = require("configs.lsp.handlers").on_attach,
 		capabilities = require("configs.lsp.handlers").capabilities,
 	}
+    if server.name == "emmet_ls" then
+        opts.filetypes = { "html", "typescriptreact", "javascriptreact" }
+    end
 	server:setup(opts)
 end)
 
