@@ -40,8 +40,6 @@ packer.init {
 
 return packer.startup(function(use)    
     use 'wbthomason/packer.nvim'
-    use 'onsails/lspkind-nvim'
-    use "lunarvim/darkplus.nvim"
 
     -- Lsp
     use 'neovim/nvim-lspconfig'
@@ -54,6 +52,8 @@ return packer.startup(function(use)
     use 'nvim-lualine/lualine.nvim'
     use 'akinsho/bufferline.nvim'
     use 'akinsho/toggleterm.nvim'
+    use "lunarvim/darkplus.nvim"
+    use 'onsails/lspkind-nvim'
 
     -- Cmp
     use 'saadparwaiz1/cmp_luasnip'     -- Snippets source for nvim-cmp
