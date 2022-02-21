@@ -9,7 +9,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
   debug = false,
   sources = {
-    formatting.prettier,
+    formatting.prettierd,
     formatting.clang_format,
   },
 }

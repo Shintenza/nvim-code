@@ -11,6 +11,9 @@ lsp_installer.on_server_ready(function(server)
     if server.name == "emmet_ls" then
         opts.filetypes = { "html", "typescriptreact", "javascriptreact" }
     end
+    if server.name == "cssls" then 
+        opts.filetypes = { "html", "typescriptreact", "javascriptreact", "css", "scss" }
+    end
 	server:setup(opts)
 end)
 
