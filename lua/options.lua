@@ -23,7 +23,7 @@ set.updatetime = 300                        -- faster completion (4000ms default
 set.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 set.expandtab = true
 set.shiftwidth = 4                          -- the number of spaces inserted for each indentation
-set.tabstop = 4                             -- insert 2 spaces for a tab
+set.tabstop = 4                             -- insert 4 spaces for a tab
 set.number = true                           -- set numbered lines
 set.relativenumber = false                  -- set relative numbered lines
 set.numberwidth = 4                         -- set number column width to 2 {default 4}
@@ -31,7 +31,7 @@ set.signcolumn = "yes"                      -- always show the sign column, othe
 set.wrap = false                            -- display lines as one long line
 set.scrolloff = 8                           -- is one of my fav
 set.sidescrolloff = 8
-set.guifont = 'Hack Nerd Font:h9'
+set.guifont = 'Hack Nerd Font:h10'
 set.incsearch = true
 set.hidden = true
 
