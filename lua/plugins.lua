@@ -54,6 +54,10 @@ return packer.startup(function(use)
     use 'akinsho/toggleterm.nvim'
     use 'onsails/lspkind-nvim'
     use 'navarasu/onedark.nvim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
     -- Cmp
     use {

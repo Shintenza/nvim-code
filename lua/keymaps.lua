@@ -17,7 +17,10 @@ keymap('n', '<A-[>', '<cmd>BufferLineCyclePrev<CR>', opts)
 keymap('n', '<A-]>', '<cmd>BufferLineCycleNext<CR>', opts)
 
 -- Nvim Tree
-vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
+
+-- Telescope
+keymap('n', '<C-f>', ':Telescope find_files<CR>', opts)
 
 -- term
 keymap('t', '<Esc>', '<C-\\><C-n>', opts)
