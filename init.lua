@@ -14,4 +14,4 @@ require('configs.nvimtree')
 require('configs.autopairs')
 require('configs.toggleterm')
 require('configs.treesitter')
-
+require('configs.indent-blankline')

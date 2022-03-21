@@ -52,8 +52,8 @@ return packer.startup(function(use)
     use 'nvim-lualine/lualine.nvim'
     use 'akinsho/bufferline.nvim'
     use 'akinsho/toggleterm.nvim'
-    use "lunarvim/darkplus.nvim"
     use 'onsails/lspkind-nvim'
+    use 'navarasu/onedark.nvim'
 
     -- Cmp
     use {
@@ -70,9 +70,11 @@ return packer.startup(function(use)
     use 'L3MON4D3/LuaSnip'             -- Snippets plugin
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+    -- Utils
     use "nvim-treesitter/nvim-treesitter"
     use 'windwp/nvim-autopairs'
     use 'terrortylor/nvim-comment'
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- Git
     use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim'}}
