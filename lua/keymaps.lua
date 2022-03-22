@@ -2,6 +2,10 @@ local opts = { noremap = false, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Normal mode
+-- leader key mapping 
+keymap("", "<Space>", "<Nop>", opts)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- better window navigation
 keymap('n', '<A-w>', '<C-w>w',  opts)
@@ -23,13 +27,15 @@ keymap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<C-f>', ':Telescope find_files<CR>', opts)
 
 -- term
+-- keymap('t', '<C-t>', ':ToggleTerm<CR>', opts) -- defined in toggleterm.lua config file
 keymap('t', '<Esc>', '<C-\\><C-n>', opts)
+keymap('t', '<C-t>', '<C-\\><C-n>:ToggleTerm<CR>', opts)
 
 -- window resize
-keymap("n", "<A-Up>",   ":resize +2<CR>", opts)
-keymap("n", "<A-Down>", ":resize -2<CR>", opts)
-keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<A-Right>",":vertical resize +2<CR>", opts)
+keymap("n", "<A-K>", ":resize +2<CR>", opts)
+keymap("n", "<A-J>", ":resize -2<CR>", opts)
+keymap("n", "<A-L>", ":vertical resize -2<CR>", opts)
+keymap("n", "<A-H>", ":vertical resize +2<CR>", opts)
 
 -- Visual mode
 -- indenting 
