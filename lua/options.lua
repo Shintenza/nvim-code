@@ -31,6 +31,7 @@ set.signcolumn = "yes"                      -- always show the sign column, othe
 set.wrap = false                            -- display lines as one long line
 set.scrolloff = 8                           -- is one of my fav
 set.sidescrolloff = 8
+set.cursorline = true                       -- current line highlighting
 set.guifont = 'Hack Nerd Font:h9.5'
 set.incsearch = true
 set.hidden = true

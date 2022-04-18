@@ -19,6 +19,33 @@ local check_back_space = function()
   return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
 end
 
+local kind_icons = {
+  Text = "",
+  Method = "m",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "",
+  Interface = "",
+  Module = "",
+  Property = "",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
 
 cmp.setup({
     snippet = {
@@ -47,14 +74,18 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
     formatting = {
+    fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-            vim_item.kind = lspkind.presets.default[vim_item.kind]
-            vim_item.abbr = string.sub(vim_item.abbr, 1, 70)
-            vim_item.menu = ({
-                nvim_lsp = "[LSP]",
-                buffer = "[BUF]",
-            })[entry.source.name]
-            return vim_item
-        end
-  },
+          -- Kind icons
+          vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+          -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+          vim_item.menu = ({
+            nvim_lsp = "[LSP]",
+            luasnip = "[Snippet]",
+            buffer = "[Buffer]",
+            path = "[Path]",
+          })[entry.source.name]
+          return vim_item
+        end, 
+    },
 })
