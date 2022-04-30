@@ -8,6 +8,3 @@ onedark.setup {
 }
 
 onedark.load()
-
-vim.cmd('hi NvimTreeStatusLine guibg=#171B21 guifg=#171B21')
-vim.cmd('hi NvimTreeStatusLineNC guibg=#171B21 guifg=#171B21')
