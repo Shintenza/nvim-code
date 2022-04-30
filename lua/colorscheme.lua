@@ -6,5 +6,5 @@ end
 onedark.setup {
     style = 'darker'
 }
-
 onedark.load()
+vim.cmd('hi NvimTreeWinSeparator guibg=#171B21 guifg=#171B21')
