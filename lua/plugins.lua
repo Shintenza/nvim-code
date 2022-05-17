@@ -69,6 +69,7 @@ return packer.startup(function(use)
         "saadparwaiz1/cmp_luasnip",
       },
     }
+    use 'ray-x/lsp_signature.nvim'
 
     -- Snippets 
     use 'L3MON4D3/LuaSnip'             -- Snippets plugin
@@ -77,7 +78,7 @@ return packer.startup(function(use)
     -- Utils
     use "nvim-treesitter/nvim-treesitter"
     use 'windwp/nvim-autopairs'
-    use 'terrortylor/nvim-comment'
+    use 'numToStr/Comment.nvim'
     use "lukas-reineke/indent-blankline.nvim"
 
     -- Git

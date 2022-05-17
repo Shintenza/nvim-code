@@ -1,12 +1,32 @@
-local status_ok, nvim_comment = pcall(require, "nvim_comment")
+local status_ok, comment = pcall(require, "Comment")
 if not status_ok then
   return
 end
-nvim_comment.setup({
-  marker_padding = true,
-  comment_empty = true,
-  create_mappings = true,
-  line_mapping = "gcc",
-  operator_mapping = "gc",
-  hook = nil
-})
+comment.setup({
+    padding = true,
+    sticky = true,
+    ignore = nil,
+
+    toggler = {
+        line = 'gcc',
+        block = 'gbc',
+    },
+
+    opleader = {
+        line = 'gc',
+        block = 'gb',
+    },
+
+    extra = {
+        above = 'gcO',
+        below = 'gco',
+        eol = 'gcA',
+    },
+
+    mappings = {
+        basic = true,
+        extra = true,
+        extended = false,
+    },
+    pre_hook = nil,
+    post_hook = nil,})
