@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 ts_config.setup {
-   ensure_installed = {
+  ensure_installed = {
       "javascript",
       "typescript"
    },

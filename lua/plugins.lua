@@ -33,7 +33,7 @@ end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" }
+      return require('packer.util').float()
     end,
   },
 }
@@ -47,13 +47,13 @@ return packer.startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim'
 
     -- Interface
+    use 'LunarVim/darkplus.nvim' 
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
     use 'nvim-lualine/lualine.nvim'
     use 'akinsho/bufferline.nvim'
     use 'akinsho/toggleterm.nvim'
     use 'onsails/lspkind-nvim'
-    use 'navarasu/onedark.nvim'
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
