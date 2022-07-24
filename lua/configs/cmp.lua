@@ -9,7 +9,7 @@ if not snip_status_ok then
 end
 
 local label_width = 40
-local ellipsis_char = '…'
+local ellipsis_char = ''
 
 local kind_icons = {
     Text = "",
