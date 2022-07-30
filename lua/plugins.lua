@@ -55,6 +55,8 @@ return packer.startup(function(use)
     use 'akinsho/bufferline.nvim'
     use 'akinsho/toggleterm.nvim'
     use 'onsails/lspkind-nvim'
+    use 'glepnir/dashboard-nvim'
+    use 'goolord/alpha-nvim'
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
 
     -- Cmp
