@@ -39,6 +39,10 @@ local kind_icons = {
     TypeParameter = "",
 }
 
+local check_backspace = function()
+	local col = vim.fn.col(".") - 1
+	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+end
 
 cmp.setup({
     window = {
@@ -71,7 +75,7 @@ cmp.setup({
     },
     snippet = {
         expand = function(args)
-           luasnip.lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     sources = {
@@ -80,13 +84,24 @@ cmp.setup({
         { name = 'buffer' },
     },
     mapping = {
-        ['<Tab>'] = function(fallback)
+        ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
+            elseif luasnip.expandable() then
+                luasnip.expand()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            elseif check_backspace() then
+                fallback()
             else
                 fallback()
             end
-        end,
+        end, {
+            "i",
+            "s",
+        }),
+		["<C-k>"] = cmp.mapping.select_prev_item(),
+		["<C-j>"] = cmp.mapping.select_next_item(),
         ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
         ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),

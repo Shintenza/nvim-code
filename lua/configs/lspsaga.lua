@@ -15,7 +15,7 @@ lspsaga.init_lsp_saga({
     code_action_icon = "💡", -- use emoji lightbulb in default
     code_action_num_shortcut = true, -- if true can press number to execute the codeaction in codeaction window
     code_action_lightbulb = { -- same as nvim-lightbulb but async
-        enable = true,
+        enable = false,
         sign = true,
         sign_priority = 20,
         virtual_text = true,
