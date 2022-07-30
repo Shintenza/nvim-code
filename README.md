@@ -1,4 +1,5 @@
 ![Preview](./preview.png)
+![Preview](./preview2.png)
 
 ## Scope of the project
 Creating this config I wanted to recreate vscode with all it's meaningful features. Unlike [NvChad](https://github.com/NvChad/NvChad) (or other big projects) 
