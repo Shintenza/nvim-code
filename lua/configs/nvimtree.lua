@@ -15,9 +15,9 @@ nvim_tree.setup {
   open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
-  update_cwd = false,
+  update_cwd = true,
   reload_on_bufenter = false,
-  respect_buf_cwd = false,
+  respect_buf_cwd = true,
   view = {
     adaptive_size = false,
     width = 30,
@@ -91,8 +91,8 @@ nvim_tree.setup {
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
-    update_cwd = false,
+    enable = true,
+    update_cwd = true,
     ignore_list = {},
   },
   ignore_ft_on_setup = {},

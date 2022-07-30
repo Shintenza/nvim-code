@@ -55,7 +55,6 @@ return packer.startup(function(use)
     use 'akinsho/bufferline.nvim'
     use 'akinsho/toggleterm.nvim'
     use 'onsails/lspkind-nvim'
-    use 'glepnir/dashboard-nvim'
     use 'goolord/alpha-nvim'
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
 
@@ -73,6 +72,7 @@ return packer.startup(function(use)
     use 'windwp/nvim-autopairs'
     use 'numToStr/Comment.nvim'
     use "lukas-reineke/indent-blankline.nvim"
+    use 'ahmedkhalf/project.nvim'
 
     -- Git
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
