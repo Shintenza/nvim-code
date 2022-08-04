@@ -48,7 +48,7 @@ return packer.startup(function(use)
     use "glepnir/lspsaga.nvim"
 
     -- Interface
-    use 'LunarVim/darkplus.nvim'
+    use { "lunarvim/darkplus.nvim", branch = "neovim-0.7" }
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
     use 'nvim-lualine/lualine.nvim'
