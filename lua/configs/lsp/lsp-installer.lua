@@ -14,6 +14,8 @@ lsp_installer.on_server_ready(function(server)
     if server.name == "cssls" then 
         opts.filetypes = { "html", "typescriptreact", "javascriptreact", "css", "scss" }
     end
+    if server.name == "jdtls" then goto continue end
 	server:setup(opts)
+    ::continue::
 end)
 

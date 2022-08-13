@@ -11,5 +11,6 @@ null_ls.setup {
   sources = {
     formatting.prettierd,
     formatting.clang_format,
+    formatting.google_java_format,
   },
 }

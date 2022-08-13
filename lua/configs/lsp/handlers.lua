@@ -60,13 +60,23 @@ local function lsp_keymaps(client, bufnr)
     buf_set_keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
     buf_set_keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
     buf_set_keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+
+    vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
 M.on_attach = function(client, bufnr)
+    lsp_keymaps(client, bufnr)
     if client.name == "tsserver" then
         client.resolved_capabilities.document_formatting = false
     end
-    lsp_keymaps(client, bufnr)
+    if client.name == "jdt.ls" then
+        -- if JAVA_DAP_ACTIVE then
+        --     require("jdtls").setup_dap { hotcodereplace = "auto" }
+        --     require("jdtls.dap").setup_dap_main_class_configs()
+        -- end
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.textDocument.completion.completionItem.snippetSupport = false
+    end
 end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
