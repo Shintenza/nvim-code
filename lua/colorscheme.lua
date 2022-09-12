@@ -1,5 +1,8 @@
-local status_ok, onedark = pcall(require, "darkplus")
+local status_ok, onedark = pcall(require, "onedark")
 if not status_ok then 
     vim.notify("colorscheme " .. colorscheme .. " not found!")
 end
-vim.cmd('hi VertSplit guibg=#017bce guifg=bg')
+onedark.setup {
+    style = 'darker'
+}
+onedark.load()

@@ -48,7 +48,6 @@ return packer.startup(function(use)
     use "glepnir/lspsaga.nvim"
 
     -- Interface
-    use { "lunarvim/darkplus.nvim", branch = "neovim-0.7" }
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
     use 'nvim-lualine/lualine.nvim'
@@ -57,6 +56,10 @@ return packer.startup(function(use)
     use 'onsails/lspkind-nvim'
     use 'goolord/alpha-nvim'
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
+
+    -- Themes
+    use { "lunarvim/darkplus.nvim", branch = "neovim-0.7" }
+    use 'navarasu/onedark.nvim'
 
     -- Cmp
     use { "hrsh7th/nvim-cmp",
