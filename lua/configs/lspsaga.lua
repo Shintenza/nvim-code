@@ -9,8 +9,6 @@ lspsaga.init_lsp_saga({
     saga_winblend = 0, -- transparency
     move_in_saga = { prev = '<C-p>', next = '<C-n>' },
     diagnostic_header = { " ", " ", " ", "ﴞ " },
-    show_diagnostic_source = true, -- show diagnostic source
-    diagnostic_source_bracket = {}, -- add bracket or something with diagnostic source, just have 2 elements
     max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
     code_action_icon = "💡", -- use emoji lightbulb in default
     code_action_num_shortcut = true, -- if true can press number to execute the codeaction in codeaction window
@@ -39,7 +37,6 @@ lspsaga.init_lsp_saga({
         exec = "<CR>",
     },
     rename_action_quit = "<C-c>",
-    definition_preview_icon = "  ",
     -- show symbols in winbar must nightly
     symbol_in_winbar = {
         in_custom = false,
