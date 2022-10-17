@@ -67,15 +67,15 @@ end
 M.on_attach = function(client, bufnr)
     lsp_keymaps(client, bufnr)
     if client.name == "tsserver" then
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
     end
     if client.name == "jdt.ls" then
         -- if JAVA_DAP_ACTIVE then
         --     require("jdtls").setup_dap { hotcodereplace = "auto" }
         --     require("jdtls.dap").setup_dap_main_class_configs()
         -- end
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.textDocument.completion.completionItem.snippetSupport = false
+        client.server_capabilities.document_formatting = false
+        client.server_capabilities.textDocument.completion.completionItem.snippetSupport = false
     end
 end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -85,7 +85,8 @@ if not status_ok then
     return
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+
 M.capabilities.offsetEncoding = { "utf-16" }
 
 return M
