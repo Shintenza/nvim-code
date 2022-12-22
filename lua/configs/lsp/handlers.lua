@@ -1,5 +1,14 @@
 local M = {}
 
+local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not status_cmp_ok then
+	return
+end
+
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
+
 M.setup = function()
     local signs = {
         { name = "DiagnosticSignError", text = "" },
@@ -70,23 +79,15 @@ M.on_attach = function(client, bufnr)
         client.server_capabilities.document_formatting = false
     end
     if client.name == "jdt.ls" then
-        -- if JAVA_DAP_ACTIVE then
-        --     require("jdtls").setup_dap { hotcodereplace = "auto" }
-        --     require("jdtls.dap").setup_dap_main_class_configs()
-        -- end
         client.server_capabilities.document_formatting = false
         client.server_capabilities.textDocument.completion.completionItem.snippetSupport = false
     end
+
+	local status_ok, illuminate = pcall(require, "illuminate")
+	if not status_ok then
+		return
+	end
+	illuminate.on_attach(client)
 end
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-    return
-end
-
-M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
-
-M.capabilities.offsetEncoding = { "utf-16" }
 
 return M

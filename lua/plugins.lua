@@ -43,9 +43,11 @@ return packer.startup(function(use)
 
     -- Lsp
     use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
     use 'jose-elias-alvarez/null-ls.nvim'
-    use "glepnir/lspsaga.nvim"
+    use 'glepnir/lspsaga.nvim'
+    use 'RRethy/vim-illuminate'
 
     -- Interface
     use 'kyazdani42/nvim-web-devicons'

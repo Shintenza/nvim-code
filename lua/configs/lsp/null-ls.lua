@@ -10,7 +10,6 @@ null_ls.setup {
   debug = false,
   sources = {
     formatting.prettierd,
-    formatting.clang_format,
     formatting.google_java_format,
   },
 }
