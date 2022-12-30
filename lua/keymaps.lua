@@ -25,6 +25,7 @@ keymap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
 
 -- Telescope
 keymap('n', '<C-f>', ':Telescope find_files<CR>', opts)
+keymap('n', '<C-g>', ':Telescope live_grep<CR>', opts)
 
 -- term
 -- keymap('t', '<C-t>', ':ToggleTerm<CR>', opts) -- defined in toggleterm.lua config file
