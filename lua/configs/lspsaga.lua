@@ -4,7 +4,7 @@ if not lspsaga_ok then
     return
 end
 
-lspsaga.init_lsp_saga({
+lspsaga.setup({
     border_style = "single", -- "single" | "double" | "rounded" | "bold" | "plus"
     saga_winblend = 0, -- transparency
     move_in_saga = { prev = '<C-p>', next = '<C-n>' },
@@ -13,7 +13,7 @@ lspsaga.init_lsp_saga({
     code_action_icon = "💡", -- use emoji lightbulb in default
     code_action_num_shortcut = true, -- if true can press number to execute the codeaction in codeaction window
     code_action_lightbulb = { -- same as nvim-lightbulb but async
-        enable = false,
+        enable = true,
         sign = true,
         sign_priority = 20,
         virtual_text = true,
