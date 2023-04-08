@@ -28,7 +28,7 @@ keymap('n', '<C-f>', ':Telescope find_files<CR>', opts)
 keymap('n', '<C-g>', ':Telescope live_grep<CR>', opts)
 
 -- term
--- keymap('t', '<C-t>', ':ToggleTerm<CR>', opts) -- defined in toggleterm.lua config file
+keymap('t', '<C-t>', ':ToggleTerm<CR>', opts)
 keymap('t', '<Esc>', '<C-\\><C-n>', opts)
 keymap('t', '<C-t>', '<C-\\><C-n>:ToggleTerm<CR>', opts)
 
