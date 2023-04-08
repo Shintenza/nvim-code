@@ -60,8 +60,9 @@ return packer.startup(function(use)
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
 
     -- Themes
-    use { "lunarvim/darkplus.nvim", branch = "neovim-0.7" }
+    -- use { "lunarvim/darkplus.nvim"}
     use 'navarasu/onedark.nvim'
+    -- use 'folke/tokyonight.nvim'
 
     -- Cmp
     use { "hrsh7th/nvim-cmp",
@@ -84,4 +85,5 @@ return packer.startup(function(use)
 
     -- Java
     use { "mfussenegger/nvim-jdtls", commit = "3a148dac526396678f141a033270961d0d9ccb88" }
+
 end)

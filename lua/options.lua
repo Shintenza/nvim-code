@@ -48,5 +48,3 @@ vim.cmd('set nofoldenable')
 vim.cmd('set foldlevel=99')
 vim.cmd('set fillchars=fold:\\ ')
 vim.cmd('set foldtext=CustomFoldText()')
-
-

@@ -5,61 +5,54 @@ if not lspsaga_ok then
 end
 
 lspsaga.setup({
-    border_style = "single", -- "single" | "double" | "rounded" | "bold" | "plus"
-    saga_winblend = 0, -- transparency
-    move_in_saga = { prev = '<C-p>', next = '<C-n>' },
-    diagnostic_header = { " ", " ", " ", "ﴞ " },
-    max_preview_lines = 10, -- preview lines of lsp_finder and definition preview
-    code_action_icon = "💡", -- use emoji lightbulb in default
-    code_action_num_shortcut = true, -- if true can press number to execute the codeaction in codeaction window
-    code_action_lightbulb = { -- same as nvim-lightbulb but async
-        enable = true,
-        sign = true,
-        sign_priority = 20,
-        virtual_text = true,
+  ui = {
+    title = true,
+    -- Border type can be single, double, rounded, solid, shadow.
+    border = "single",
+    winblend = 0,
+    expand = "",
+    collapse = "",
+    code_action = "💡",
+    incoming = " ",
+    outgoing = " ",
+    hover = ' ',
+    kind = {},
+  },
+  diagnostic = {
+    on_insert = false,
+    on_insert_follow = false,
+    insert_winblend = 0,
+    show_virt_line = true,
+    show_code_action = true,
+    show_source = true,
+    jump_num_shortcut = true,
+     --1 is max
+    max_width = 0.7,
+    custom_fix = nil,
+    custom_msg = nil,
+    text_hl_follow = false,
+    border_follow = true,
+    keys = {
+      exec_action = "o",
+      quit = "q",
+      go_action = "g"
     },
-    finder_icons = {
-        def = '  ',
-        ref = '諭 ',
-        link = '  ',
-    },
-    finder_action_keys = {
-        open = "o",
-        vsplit = "s",
-        split = "i",
-        tabe = "t",
-        quit = "q",
-        scroll_down = "<C-f>",
-        scroll_up = "<C-b>", -- quit can be a table
-    },
-    code_action_keys = {
-        quit = "q",
-        exec = "<CR>",
-    },
-    rename_action_quit = "<C-c>",
-    -- show symbols in winbar must nightly
-    symbol_in_winbar = {
-        in_custom = false,
-        enable = false,
-        separator = ' ',
-        show_file = true,
-        click_support = false,
-    },
-    -- show outline
-    show_outline = {
-        win_position = 'right',
-        -- set the special filetype in there which in left like nvimtree neotree defx
-        left_with = '',
-        win_width = 30,
-        auto_enter = true,
-        auto_preview = true,
-        virt_text = '┃',
-        jump_key = 'o',
-        -- auto refresh when change buffer
-        auto_refresh = true,
-    },
-    -- if you don't use nvim-lspconfig you must pass your server name and
-    -- the related filetypes into this table
-    -- like server_filetype_map = { metals = { "sbt", "scala" } }
-    server_filetype_map = {},
+  },
+  lightbulb = {
+    enable = false,
+    enable_in_insert = true,
+    sign = true,
+    sign_priority = 40,
+    virtual_text = true,
+  },
+  symbol_in_winbar = {
+    enable = true,
+    separator = "  ",
+    ignore_patterns={},
+    hide_keyword = true,
+    show_file = true,
+    folder_level = 2,
+    respect_root = false,
+    color_mode = true,
+  },
 })
