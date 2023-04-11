@@ -4,8 +4,8 @@ if not status_ok then
 end
 
 local colors = {
-    bg = '#668ee3',
-    fg = '#282c34'
+    bg = '#007ACC',
+    fg = '#D4D4D4'
 }
 
 local hide_in_width = function()

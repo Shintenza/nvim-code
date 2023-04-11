@@ -1,9 +1,9 @@
-local status_ok, onedark = pcall(require, "onedark")
+local status_ok, onedark = pcall(require, "darkplus")
 if not status_ok then 
     vim.notify("colorscheme " .. colorscheme .. " not found!")
 end
 
-vim.cmd[[colorscheme onedark]]
+vim.cmd[[colorscheme darkplus]]
 
 if vim.fn.hlexists('SagaBorder') and vim.fn.hlexists('SagaNormal') then
     vim.cmd('highlight! link SagaBorder SagaNormal')
