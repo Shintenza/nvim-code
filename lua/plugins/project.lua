@@ -1,6 +1,7 @@
 local M = {
   "ahmedkhalf/project.nvim",
   commit = "685bc8e3890d2feb07ccf919522c97f7d33b94e4",
+  lazy = false,
   dependencies = {
     {
       "nvim-telescope/telescope.nvim",
@@ -16,7 +17,7 @@ function M.config()
     active = true,
     on_config_done = nil,
     manual_mode = false,
-    detection_methods = { "pattern" },
+    detection_methods = { "pattern, lsp" },
     patterns = { ".git", "Makefile", "package.json" },
     show_hidden = true,
     silent_chdir = true,
