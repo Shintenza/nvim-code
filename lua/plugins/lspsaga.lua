@@ -1,6 +1,6 @@
 local M = {
   "nvimdev/lspsaga.nvim",
-  commit = "557e6fd7fbca325a4bea582576fe36bec903367c",
+  commit = "2198c07124bef27ef81335be511c8abfd75db933",
   event = "LspAttach",
 }
 
