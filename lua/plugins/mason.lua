@@ -9,12 +9,12 @@ local M = {
       commit = "56e435e09f8729af2d41973e81a0db440f8fe9c9",
     },
     {
-      "jose-elias-alvarez/null-ls.nvim",
-      commit = "db09b6c691def0038c456551e4e2772186449f35",
+      "nvimtools/none-ls.nvim",
+      commit = "912f81829e9ab4ee3d54c3ea5a304c264f0003bc",
     },
     {
       "jay-babu/mason-null-ls.nvim",
-      commit = "ae0c5fa57468ac65617f1bf821ba0c3a1e251f0c",
+      commit = "a1e19bf9baa86e8a43dd86cf9689ca9f71b4d1da",
     },
   },
 }
