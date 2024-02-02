@@ -1,6 +1,6 @@
 local M = {
   "akinsho/toggleterm.nvim",
-  commit = "00c13dccc78c09fa5da4c5edda990a363e75035e",
+  commit = "b49df5cdce67a8964d1b027dae94bde212092b51",
   event = "VeryLazy",
 }
 
@@ -8,7 +8,6 @@ function M.config()
   local toggleterm = require("toggleterm")
   toggleterm.setup({
     size = 15,
-    open_mapping = [[<c-t>]],
     hide_numbers = true,
     shade_terminals = true,
     shading_factor = 2,
