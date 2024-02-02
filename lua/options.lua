@@ -1,5 +1,9 @@
 local set = vim.opt
 
+-- disable netrw
+vim.g.loaded_netrw       = 1
+vim.g.loaded_netrwPlugin = 1
+
 set.backup = false                          -- creates a backup file
 set.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 set.cmdheight = 1                           -- more space in the neovim command line for displaying messages
