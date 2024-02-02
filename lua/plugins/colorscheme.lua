@@ -2,20 +2,17 @@ local M = {
   "navarasu/onedark.nvim",
   lazy = false,
   priority = 1000,
-  commit = "cae5fdf035ee92c407a29ee2ccfcff503d2be7f1",
+  commit = "1230aaf2a427b2c5b73aba6e4a9a5881d3e69429",
 }
 
 function M.config()
   require("onedark").setup({
-    style = "warmer",
+    style = "darker",
   })
   require("onedark").load()
 
   vim.cmd("highlight FoldColumn guibg=Normal")
-  if vim.fn.hlexists("NvimTreeNormal") and vim.fn.hlexists("NvimTreeWinSeparator") then
-    local bg = vim.api.nvim_get_hl_by_name("NvimTreeNormal", true).guibg
-    vim.cmd("highlight NvimTreeWinSeparator guifg=bg guibg=bg")
-  end
+  vim.cmd("highlight NvimTreeWinSeparator guifg=bg guibg=bg")
 end
 
 return M
