@@ -8,6 +8,7 @@ function M.config()
   local toggleterm = require("toggleterm")
   toggleterm.setup({
     size = 15,
+    open_mapping = [[<c-t>]],
     hide_numbers = true,
     shade_terminals = true,
     shading_factor = 2,

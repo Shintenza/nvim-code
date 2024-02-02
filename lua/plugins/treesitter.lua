@@ -18,7 +18,7 @@ local M = {
 }
 
 function M.config()
-  local treesitter = require("nvim-treesitter")
+  vim.g.skip_ts_context_commentstring_module = true
   local configs = require("nvim-treesitter.configs")
 
   configs.setup({
@@ -37,10 +37,6 @@ function M.config()
       enable = true,
     },
     indent = { enable = true, disable = { "python" } },
-    context_commentstring = {
-      enable = true,
-      enable_autocmd = false,
-    },
   })
 end
 
