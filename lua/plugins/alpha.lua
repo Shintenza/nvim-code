@@ -5,6 +5,8 @@ local M = {
 }
 
 function M.config()
+  vim.cmd("highlight FoldColumn guibg=Normal")
+  vim.cmd("highlight NvimTreeWinSeparator guifg=bg guibg=bg")
   local alpha = require("alpha")
   local dashboard = require("alpha.themes.dashboard")
   dashboard.section.header.val = {
