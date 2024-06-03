@@ -1,6 +1,5 @@
 local M = {
   "nvim-tree/nvim-tree.lua",
-  commit = "f1b3e6a7eb92da492bd693257367d9256839ed3d",
   event = "VimEnter",
   dependencies = {
     "nvim-tree/nvim-web-devicons",

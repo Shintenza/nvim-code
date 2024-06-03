@@ -1,14 +1,11 @@
 local M = {
-  "jesseleite/nvim-noirbuddy",
-  dependencies = {
-    { "tjdevries/colorbuddy.nvim", branch = "dev" },
-  },
+  "olimorris/onedarkpro.nvim",
   lazy = false,
   priority = 1000,
-  opts = {
-    preset = "miami-nights",
-  },
 }
 
+function M.config()
+  vim.cmd("colorscheme onedark_vivid")
+end
 
 return M

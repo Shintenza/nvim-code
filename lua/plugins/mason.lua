@@ -1,6 +1,5 @@
 local M = {
   "williamboman/mason.nvim",
-  commit = "c43eeb5614a09dc17c03a7fb49de2e05de203924",
   cmd = "Mason",
   event = "BufReadPre",
   dependencies = {
